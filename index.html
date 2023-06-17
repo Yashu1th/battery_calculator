@@ -8,6 +8,61 @@
   </head>
   <body>
     <div class="container">
+      <div class="wrap">
+        <div class="theory">
+          <h1>Therotical</h1>
+          <p id="result">0 days</p>
+          <!-- <p id="result2">5 minute deep sleep mode</p>
+          <p id="result3">1 hour deep sleep mode</p>
+          <p id="result4">WH and NWH mode</p> -->
+        </div>
+        <!-- <p id="category">Normal Weight</p> -->
+        <div class="practical">
+          <h1>Practical</h1>
+          <p id="result1">0 days</p>
+          <!-- <p id="result6">5 minute deep sleep mode</p>
+          <p id="result7">1 hour deep sleep mode</p>
+          <p id="result8">WH and NWH mode</p> -->
+        </div>
+        <!-- <p id="category">Normal Weight</p> -->
+      </div>
+      <br />
+      <label for="">Please select the Sleep mode*:</label><br />
+      <input
+        type="radio"
+        name="test"
+        id="input1"
+        onclick="calculate()"
+        value="1 minute"
+      /><label for="input1">1 minute</label>
+      <input
+        type="radio"
+        name="test"
+        id="input2"
+        value="5 minute"
+        onclick="calculate()"
+      />
+      <label for="input2">5 minute</label>
+      <input
+        type="radio"
+        name="test"
+        id="input3"
+        value="1 hour"
+        onclick="calculate()"
+      />
+      <label for="input3">1 hour</label>
+      <input
+        type="radio"
+        name="test"
+        id="input4"
+        value="hybrid"
+        onclick="calculate()"
+      />
+      <label for="input4">hybrid</label> <br /><br />
+
+      <label for="">Active time:</label>
+      <input type="number" min="1" max="59" id="active-time"><br>
+
       <label for="">Battery Capacity:</label>
       <div class="row">
         <input
@@ -64,32 +119,14 @@
       <div class="row">
         <input
           type="range"
-          min="0"
+          min="10"
           max="100"
-          value="0"
+          value="10"
           id="drain"
           oninput="calculate()"
         />
-        <span id="drain-val">0 %</span>
+        <span id="drain-val">10 %</span>
       </div>
-      <div class="wrap">
-        <div class="theory">
-          <h3>Therotical</h3>
-          <p id="result1">1 minute deep sleep mode</p>
-          <p id="result2">5 minute deep sleep mode</p>
-          <p id="result3">1 hour deep sleep mode</p>
-          <p id="result4">WH and NWH mode</p>
-        </div>
-      <!-- <p id="category">Normal Weight</p> -->
-      <div class="practical">
-        <h3>Practical</h3>
-        <p id="result5">1 minute deep sleep mode</p>
-        <p id="result6">5 minute deep sleep mode</p>
-        <p id="result7">1 hour deep sleep mode</p>
-        <p id="result8">WH and NWH mode</p>
-      </div>
-      <!-- <p id="category">Normal Weight</p> -->
-    </div>
     </div>
     <script src="script.js"></script>
   </body>
