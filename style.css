@@ -9,6 +9,11 @@ body{
     background:linear-gradient(135deg,#5569d9,#382ebf);
 
 }
+.wrap{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
 .container{
     background-color: #ffffff;
     padding:40px 30px;

@@ -15,6 +15,10 @@ function calculate(){
     fiveMinute(mins,pow_consumption,ds_pow_con,battery_capacity);
     oneHour(mins,pow_consumption,ds_pow_con,battery_capacity);
     whNwh(mins,pow_consumption,ds_pow_con,battery_capacity,work_hrs);
+    pOneMinute(mins,pow_consumption,ds_pow_con,battery_capacity,drain);
+    pFiveMinute(mins,pow_consumption,ds_pow_con,battery_capacity,drain);
+    pOneHour(mins,pow_consumption,ds_pow_con,battery_capacity,drain);
+    pWhNwh(mins,pow_consumption,ds_pow_con,battery_capacity,work_hrs,drain);
 }
 
 function oneMinute(mins,pow_consumption,ds_pow_con,battery_capacity){
@@ -45,5 +49,35 @@ function whNwh(mins,pow_consumption,ds_pow_con,battery_capacity,work_hrs){
     var g=(e+f)/60;
     var output4=Math.floor(battery_capacity/g);
     var result4=document.getElementById("result4");
+    result4.textContent=`WH and NWH mode: ${output4} days`;
+}
+function pOneMinute(mins,pow_consumption,ds_pow_con,battery_capacity,drain){
+    var total=(((mins*4)/60)*pow_consumption+((mins*56)/60)*ds_pow_con)/60;
+    var output=Math.floor((battery_capacity-(drain*0.01*battery_capacity))/total);
+    var result=document.getElementById("result5");
+    result.textContent=`1 minute deep sleep mode: ${output} days`;
+}
+function pFiveMinute(mins,pow_consumption,ds_pow_con,battery_capacity,drain){
+    var total=((((mins/5)*4)/60)*pow_consumption+(((mins/5)*296)/60)*ds_pow_con)/60;
+    var output=Math.floor((battery_capacity-(drain*0.01*battery_capacity))/total);
+    var result=document.getElementById("result6");
+    result.textContent=`5 minute deep sleep mode:${output} days`;
+}
+function pOneHour(mins,pow_consumption,ds_pow_con,battery_capacity,drain){
+    var total=((((mins/60)*4)/60)*pow_consumption+(((mins/60)*3596)/60)*ds_pow_con)/60;
+    var output=Math.floor((battery_capacity-(drain*0.01*battery_capacity))/total);
+    var result=document.getElementById("result7");
+    result.textContent=`1 hour deep sleep mode:${output} days`;
+}
+function pWhNwh(mins,pow_consumption,ds_pow_con,battery_capacity,work_hrs,drain){
+    var a=((mins/5)*296)*work_hrs/24;
+    var b=((mins/5)*4)*work_hrs/24;
+    var c=((mins/60)*3596)*(24-work_hrs)/24;
+    var d=((mins/60)*4)*(24-work_hrs)/24;
+    var e=((a+c)/60)*ds_pow_con;
+    var f=((b+d)/60)*pow_consumption;
+    var g=(e+f)/60;
+    var output4=Math.floor((battery_capacity-(drain*0.01*battery_capacity))/g);
+    var result4=document.getElementById("result8");
     result4.textContent=`WH and NWH mode: ${output4} days`;
 }
