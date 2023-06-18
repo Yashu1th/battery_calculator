@@ -12,6 +12,9 @@ function calculate(){
     var secs=86400;
     
     var active =document.getElementById('active-time').value;
+    if(active>59){
+        alert("Active time should be less than 59 seconds");
+    }
     if(document.getElementById('input1').checked){
         var sleep=60-active;
         var mins=1440;
