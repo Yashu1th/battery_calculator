@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container contain mt-5 rounded-3">
-      <h1 class="fw-bold fs-1 d-flex justify-content-center m-0 p-0">Battery With Stand Calculator</h1>
+      <h1 class="fw-bold fs-1 d-flex justify-content-center m-0 p-0 text-muted">Battery With Stand Calculator</h1>
       <div class="row gx-5 d-flex flex-row-reverse">
         <div class="col-md-6 d-flex align-items-center justify-content-center">
          <div class="shadow-lg p-5 border bg-light rounded-3">
@@ -37,8 +37,8 @@
          </div>
         </div>
         <div class="col-md-6">
-          <div class="p-5">
-            <label for="">Please select the Sleep mode<span class="text-danger">*</span> :</label><br />
+          <div class="p-5 ">
+            <label for=""class="fw-bold text-muted">Please select the Sleep mode<span class="text-danger">*</span> :</label><br />
             <input
               type="radio"
               name="test"
@@ -69,12 +69,12 @@
               value="hybrid"
               onclick="calculate()"
             />
-            <label for="input4">hybrid</label> <br /><br />
+            <label for="input4">hybrid</label> <br /> <br/>
       
-            <label for="">Active time<span class="text-danger">*</span> :</label>
-            <input type="number" id="active-time" onchange="calculate()"><br>
+            <label for="" class="fw-bold text-muted">Active time<span class="text-danger">*</span> :</label>
+            <input type="number" id="active-time" onchange="calculate()"><br><br>
       
-            <label for="">Battery Capacity:</label>
+            <label for="" class="fw-bold text-muted">Battery Capacity:</label>
             <div class="row ">
               <input
                 type="range"
@@ -89,7 +89,7 @@
               />
               <span id="bat-cap-val"class="d-flex justify-content-end">0 mah</span>
             </div>
-            <label for="">Active Power consumption:</label>
+            <label for="" class="fw-bold text-muted">Active Power consumption:</label>
             <div class="row">
               <input
                 type="range"
@@ -98,12 +98,12 @@
                 value="0"
                 step="1"
                 id="pow_con"
-                class="form-range pointer-event"
+                class="form-range pointer-event "
                 oninput="calculate()"
               />
               <span id="pow-con-val" class="d-flex justify-content-end">0 mah</span>
             </div>
-            <label for="">Deep Sleep Power Consumption:</label>
+            <label for="" class="fw-bold text-muted">Deep Sleep Power Consumption:</label>
             <div class="row">
               <input
                 type="range"
@@ -117,7 +117,7 @@
               />
               <span id="ds-pow-con-val" class="d-flex justify-content-end">0 mah</span>
             </div>
-            <label for="">Number of working hours:</label>
+            <label for="" class="fw-bold text-muted">Number of working hours:</label>
             <div class="row">
               <input
                 type="range"
@@ -131,7 +131,7 @@
               />
               <span id="work-hrs-val" class="d-flex justify-content-end">0 hrs</span>
             </div>
-            <label for="">Battery % drained by external factors:</label>
+            <label for="" class="fw-bold text-muted">Battery % drained by external factors:</label>
             <div class="row">
               <input
                 type="range"
